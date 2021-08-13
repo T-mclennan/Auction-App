@@ -1,5 +1,6 @@
 import classes from './item.module.css';
 import Link from 'next/link';
+import Button from '../ui/button';
 
 function Item(props) {
   const {id, title, image, description, measurements, minBid, highestBid } = props;
@@ -19,7 +20,7 @@ function Item(props) {
           </div>
         </div>
         <div classeName={classes.actions}>
-          <Link href={viewLink}>View Item</Link>
+          <Button link={viewLink}>View Item</Button>
         </div>
       </div>
     </li>
