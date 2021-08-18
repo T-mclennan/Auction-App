@@ -1,7 +1,7 @@
 function AllItemsPage() {
   return (
     <div>
-      <H1>All Items</H1>
+      <h1>All Items</h1>
     </div>
   )
 }
