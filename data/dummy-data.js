@@ -45,7 +45,7 @@ const DUMMY_ITEMS = [
     highestBid: 0,
     highestBidUser: null,
     image: 'images/wood.jpeg',
-    isFeatured: true,
+    isFeatured: false,
   },
 ];
 
@@ -57,14 +57,16 @@ export function getAllItems() {
   return DUMMY_ITEMS;
 }
 
-export function getFilteredItems(categoryFilter) {
-  const { category } = categoryFilter;
+export function getFilteredItems(category) {
 
-  let filteredEvents = DUMMY_EVENTS.filter((event) => {
-    return event.categories.includes(category);
+  if (category === 'Featured') {
+    return DUMMY_ITEMS.filter(item => item.isFeatured);
+  }
+
+  let filteredItems = DUMMY_ITEMS.filter((item) => {
+    return item.categories.includes(category);
   });
-
-  return filteredEvents;
+  return filteredItems;
 }
 
 export function getItemById(id) {

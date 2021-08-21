@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Fragment } from 'react';
 import { getItemById } from '../../data/dummy-data';
+import ErrorAlert from '../../components/ui/error-alert';
 import ItemSummary from '../../components/item-detail/item-summary';
 import ItemBidInfo from '../../components/item-detail/item-bid-info';
 import ItemContent from '../../components/item-detail/item-content';
@@ -11,7 +12,11 @@ function ItemDetailPage() {
 
   const item = getItemById(itemId);
   if (!item) {
-    return <p>No Item Found!</p>
+    return (
+      <ErrorAlert>
+        <p>No Item Found!</p>
+      </ErrorAlert>
+    )
   }
   
   const { image, minBid, highestBid, measurements, title, description} = item;

@@ -19,7 +19,7 @@ function Item(props) {
             <h4>Current Bid: {highestBid}</h4>
           </div>
         </div>
-        <div classeName={classes.actions}>
+        <div className={classes.actions}>
           <Button link={viewLink}>
             <span>View Item</span>
             <span className={classes.icon}><ArrowRightIcon/></span>  
